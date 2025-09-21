@@ -85,8 +85,8 @@ for loop in range(6):
 
 R = float(Rvals0) * frac
 X = float(Xvals0) * frac
-print 'Z = {:.5f}{:+.5f}j'.format(R, X)
-print 'deviation:', min_dev
+print('Z = {:.5f}{:+.5f}j'.format(R, X))
+print('deviation:', min_dev)
 
 print('Validation ...')
 for Vload, Zload, in zip(Vs, Zs):
