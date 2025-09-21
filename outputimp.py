@@ -17,8 +17,8 @@ Vs = (13.0, 6.56, 14.1)
 def relation(v):
 	"""relations between values"""
 	relations = []
-	for i in xrange(len(v)):
-		for j in xrange(i+1, len(v)):
+	for i in range(len(v)):
+		for j in range(i+1, len(v)):
 			relations.append(v[i]/v[j])
 	return relations
 
@@ -57,7 +57,7 @@ Xvals0 = 0
 Xwindow = 100 # +/-
 frac = 1.0
 
-for loop in xrange(6):
+for loop in range(6):
 	#~ print '--------------'
 	Xvals = (Xvals0-Xwindow, Xvals0+Xwindow)
 	Xvcnt = Xvals[1] - Xvals[0]
@@ -66,9 +66,9 @@ for loop in xrange(6):
 	#~ print 'X', Xvals
 
 	deviants = []
-	for r in xrange( *Rvals ):
+	for r in range( *Rvals ):
 		Zr = float(r) * frac
-		for x in xrange( *Xvals ):
+		for x in range( *Xvals ):
 			Xr = float(x) * frac
 			deviants.append( error(Zr, Xr) )
 
@@ -88,7 +88,7 @@ X = float(Xvals0) * frac
 print 'Z = {:.5f}{:+.5f}j'.format(R, X)
 print 'deviation:', min_dev
 
-print 'Validation ...'
+print('Validation ...')
 for Vload, Zload, in zip(Vs, Zs):
-	print 'V0 is {:.6f}V @ {:.3f}Ohm'.format(Vload / vload(Zload, complex(R, X)), Zload)
+	print('V0 is {:.6f}V @ {:.3f}Ohm'.format(Vload / vload(Zload, complex(R, X)), Zload))
 
