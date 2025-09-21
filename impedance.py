@@ -27,5 +27,4 @@ Rp = ZR(5.6e3)
 # calculate total
 Zin = Cs + par(Cp,par(Lp,Rp))
 
-print "Result Zin =",
-print Zin
+print(f"Result Zin ={Zin}",Zin)
